@@ -13,6 +13,7 @@ $('table').each((i, el) => {
         const [itemId, series, partNo, voltage, capacity, x, y, z] = cells.map((i, el) => $(el).text().trim());
         batteries.push({
             url,
+            partNo,
             capacity: +capacity,
             dimensions: [+x, +y, +z].sort((a,b) => a-b),
         });
