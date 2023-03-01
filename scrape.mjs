@@ -1,6 +1,8 @@
 #!/usr/bin/env node
+import {promises as fs} from 'fs';
 import axios from 'axios';
 import * as cheerio from 'cheerio';
+import serialize from 'serialize-javascript';
 
 const batteries = [];
 
@@ -41,5 +43,6 @@ for (const capacity of lipolBatteryComCapacities) {
         });
     });
 }
-
-console.log(batteries);
+const batteriesJs = serialize(batteries, {space: 2});
+const batteriesMjs = `export const batteries = ${batteriesJs};`;
+await fs.writeFile('batteries.mjs', batteriesMjs, 'utf8');
