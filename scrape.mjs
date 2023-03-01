@@ -14,9 +14,7 @@ $('table').each((i, el) => {
         batteries.push({
             url,
             capacity: +capacity,
-            x: +x,
-            y: +y,
-            z: +z,
+            dimensions: [+x, +y, +z].sort((a,b) => a-b),
         });
     });
 });
