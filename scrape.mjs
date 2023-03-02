@@ -32,7 +32,7 @@ for (const capacity of lipolBatteryComCapacities) {
     url = `https://www.lipolbattery.com/LiPo-Battery-${capacity}.html`;
     res = await axios.get(url);
     $ = cheerio.load(res.data);
-    $('table.t_list tr').each((i, el) => {
+    $('table.t_list tr:gt(0)').each((i, el) => {
         const cells = $(el).find('td');
         const [partNo, capacity, dimensions, voltage] = cells.map((i, el) => $(el).text().trim());
         batteries.push({
