@@ -7,6 +7,9 @@ new Vue({
         batteries: batteries,
     },
     async created() {
+        for (let battery of this.batteries) {
+            battery.urlHtml = battery.url.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>');
+        }
     },
     methods: {
         async func() {

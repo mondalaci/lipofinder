@@ -20,7 +20,7 @@
                 </thead>
                 <tbody>
                     <tr v-for="battery in batteries">
-                        <td class="text-nowrap">{{battery.url}}</td>
+                        <td v-html="battery.urlHtml"></td>
                         <td>{{battery.partNo}}</td>
                         <td>{{battery.capacity}}</td>
                         <td>{{battery.dimensions}}</td>
