@@ -23,7 +23,7 @@
                         <td v-html="battery.urlHtml"></td>
                         <td>{{battery.partNo}}</td>
                         <td>{{battery.capacity}}</td>
-                        <td>{{battery.dimensions}}</td>
+                        <td>{{battery.dimensions.join(' × ')}}</td>
                     </td>
                 </tbody>
             </table>
