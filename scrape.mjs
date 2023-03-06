@@ -25,7 +25,7 @@ $('table').each((i, el) => {
 const lipolBatteryComCapacities = [
     '10mAh+',
     '100mAh+', '200mAh+', '300mAh+', '400mAh+', '500mAh+', '600mAh+', '700mAh+', '800mAh+', '900mAh+',
-    '1000mAh+', '2000mAh+', '3000mAh+', '4000mAh+', '5000mAh+', '6000mAh+', '7000mAh+', '8000mAh+', '9000mAh+', '10000mAh'
+    '1000mAh+', '2000mAh+', '3000mAh+', '4000mAh+', '5000mAh+', '6000mAh+', '7000mAh+', '8000mAh+', '9000mAh+',
 ];
 
 for (const capacity of lipolBatteryComCapacities) {
