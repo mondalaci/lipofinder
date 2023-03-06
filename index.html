@@ -16,9 +16,9 @@
                     <div class="col-auto">
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <div class="input-group-text">x</div>
+                                <div class="input-group-text">min X</div>
                             </div>
-                            <input type="text" class="form-control" v-model.trim="x" @keyup.enter="search()">
+                            <input type="text" class="form-control" v-model.trim="x">
                             <div class="input-group-append">
                                 <div class="input-group-text">mm</div>
                             </div>
@@ -28,9 +28,9 @@
                     <div class="col-auto">
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <div class="input-group-text">y</div>
+                                <div class="input-group-text">min Y</div>
                             </div>
-                            <input type="text" class="form-control" v-model.trim="y" @keyup.enter="search()">
+                            <input type="text" class="form-control" v-model.trim="y">
                             <div class="input-group-append">
                                 <div class="input-group-text">mm</div>
                             </div>
@@ -40,9 +40,9 @@
                     <div class="col-auto">
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <div class="input-group-text">z</div>
+                                <div class="input-group-text">min Z</div>
                             </div>
-                            <input type="text" class="form-control" v-model.trim="z" @keyup.enter="search()">
+                            <input type="text" class="form-control" v-model.trim="z">
                             <div class="input-group-append">
                                 <div class="input-group-text">mm</div>
                             </div>
@@ -50,7 +50,7 @@
                     </div>
 
                     <div class="col-auto">
-                        <button type="button" class="btn btn-primary" @click="search()" :disabled="!isValid()">Search</button>
+                        <button type="button" class="btn btn-primary" @click="search(x, y, z)" :disabled="!isValid()">Search</button>
                     </div>
 
                 </div>
