@@ -43,6 +43,18 @@ for (const capacity of lipolBatteryComCapacities) {
         });
     });
 }
+
+batteries.sort((a, b) => {
+    if (a.capacity !== b.capacity) {
+        return a.capacity - b.capacity;
+    }
+    for (let i = 0; i < 3; i++) {
+        if (a.dimensions[i] !== b.dimensions[i]) {
+            return a.dimensions[i] - b.dimensions[i];
+        }
+    }
+});
+
 const batteriesJs = serialize(batteries, {space: 2});
 const batteriesMjs = `export const batteries = ${batteriesJs};`;
 await fs.writeFile('batteries.mjs', batteriesMjs, 'utf8');
