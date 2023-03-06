@@ -4,9 +4,9 @@ import {batteries} from './batteries.mjs';
 new Vue({
     el: '#app',
     data: {
-        x: '0',
-        y: '0',
-        z: '0',
+        x: '100',
+        y: '100',
+        z: '100',
         batteries: [],
     },
     async created() {
@@ -24,7 +24,7 @@ new Vue({
             const [x, y, z] = [this.x, this.y, this.z].map(x => +x).sort((a,b) => a-b);
             this.batteries = batteries.filter(battery => {
                 const [x1, y1, z1] = battery.dimensions;
-                return x1 >= x && y1 >= y && z1 >= z;
+                return x >= x1 && y >= y1 && z >= z1;
             });
             this.x = x;
             this.y = y;
