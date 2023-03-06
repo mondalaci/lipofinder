@@ -4,15 +4,23 @@ import {batteries} from './batteries.mjs';
 new Vue({
     el: '#app',
     data: {
+        x: '',
+        y: '',
+        z: '',
         batteries: batteries,
     },
     async created() {
-        for (let battery of this.batteries) {
+        for (const battery of this.batteries) {
             battery.urlHtml = battery.url.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>');
         }
     },
     methods: {
-        async func() {
+        isValid() {
+            const isNumRegex = /^\d+(\.\d+)?$/;
+            return isNumRegex.test(this.x) && isNumRegex.test(this.y) && isNumRegex.test(this.z);
+        },
+        search() {
+
         },
     },
 });
